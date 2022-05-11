@@ -50,21 +50,77 @@ const exercise1 = () => {
     studen.promedio > 6;
     goodStudents.push(studen);
   });
-  console.log("---------------------exercise number 1-----------------------------" );
+  console.log(
+    "---------------------exercise number 1-----------------------------"
+  );
   console.log(goodStudents);
 };
 exercise1();
 
 /* Devuelva una lisita de los estudiantes cuyo promedio es menor a 6 puntos y la edad es mayor a 19 años. */
 
-const exercise2 = () =>{
+const exercise2 = () => {
   const otherStudents: Alumno[] = [];
-  alumnos.filter((student)=>{
-    if(student.promedio < 6 && student.edad > 19){
-      otherStudents.push(student)
+  alumnos.filter((student) => {
+    if (student.promedio < 6 && student.edad > 19) {
+      otherStudents.push(student);
     }
   });
-  console.log("---------------------exercise number 2-----------------------------")
-  console.log(otherStudents)
-}
+  console.log(
+    "---------------------exercise number 2-----------------------------"
+  );
+  console.log(otherStudents);
+};
 exercise2();
+
+/* Devuelva un arreglo ordenado segun el promedio de forma ascendente. */
+
+const exercise3 = () => {
+  const arrayPromedio: Alumno[] = [...alumnos];
+  arrayPromedio.sort((prom, prom2) => {
+    return prom.promedio - prom2.promedio;
+  });
+  console.log(
+    "---------------------exercise number 3----------------------------"
+  );
+  console.log(arrayPromedio);
+};
+exercise3();
+
+/* El profesor decidio otorgar 2 puntos a todos los estudiantes cuya nota es menor o igual a 4, devuelva un arreglo que cumpla con esta condición */
+
+const exercise4 = () => {
+  const badStudents: Alumno[] = [];
+  alumnos.filter((student) => {
+    if (student.promedio <= 4) {
+      badStudents.push(student);
+    }
+    if (badStudents) {
+      student.promedio + 2;
+    }
+  });
+  for (let i = 0; i < badStudents.length; i++) {
+    badStudents[i].promedio = badStudents[i].promedio + 2;
+  }
+  console.log(
+    "---------------------exercise number 4----------------------------"
+  );
+  console.log(badStudents);
+};
+exercise4();
+
+/* Devuelva el promedio general de todos los alumnos */
+
+const exercise5 = () => {
+  let total: number = 0;
+  alumnos.forEach((item) => {
+    total += item.promedio;
+  });
+  let promedio:number = total / alumnos.length;
+  promedio = Math.round((promedio + Number.EPSILON)* 100) /100;
+  console.log(
+    "---------------------exercise number 5----------------------------"
+  );
+  console.log(`El promedio general de los alumnos es de ${promedio}`);
+};
+exercise5();
