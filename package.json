@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "dev": "ts-node-dev src/tarea1.ts"
+    "dev": "ts-node-dev src/tarea1.ts",
+    "str": "ts-node-dev src/string.ts"
     
   },
   "keywords": [],
