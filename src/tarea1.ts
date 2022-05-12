@@ -57,7 +57,7 @@ const exercise1 = () => {
 };
 exercise1();
 
-/* Devuelva una lisita de los estudiantes cuyo promedio es menor a 6 puntos y la edad es mayor a 19 años. */
+/* Devuelva una lista de los estudiantes cuyo promedio es menor a 6 puntos y la edad es mayor a 19 años. */
 
 const exercise2 = () => {
   const otherStudents: Alumno[] = [];
@@ -87,21 +87,26 @@ const exercise3 = () => {
 };
 exercise3();
 
+
 /* El profesor decidio otorgar 2 puntos a todos los estudiantes cuya nota es menor o igual a 4, devuelva un arreglo que cumpla con esta condición */
 
 const exercise4 = () => {
   const badStudents: Alumno[] = [];
-  alumnos.filter((student) => {
+  /* alumnos.filter((student) => {
     if (student.promedio <= 4) {
       badStudents.push(student);
     }
-    if (badStudents) {
-      student.promedio + 2;
+  }); */
+  alumnos.map((student)=>{
+    if(student.promedio <= 4){
+      student.promedio += 2
+      badStudents.push(student)
     }
-  });
-  for (let i = 0; i < badStudents.length; i++) {
+  })
+
+  /* for (let i = 0; i < badStudents.length; i++) {
     badStudents[i].promedio = badStudents[i].promedio + 2;
-  }
+  } */
   console.log(
     "---------------------exercise number 4----------------------------"
   );
